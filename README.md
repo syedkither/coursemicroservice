@@ -16,22 +16,22 @@ https://cloud.mongodb.com/user#/atlas/login
 
 2) RabbitMQ
 =============
-   Install RabbitMQServer from official website. 
-   After installation check service status in start-> run -> services.msc
-   Observation: Status: Running, Startup type: Automatic
-   Note:The pre-requisite for RabbitMQ is Erlang. (Install OTP_win64_19.3.exe from softwares folder
+    * Install RabbitMQServer from official website. 
+    * After installation check service status in start-> run -> services.msc
+    * Observation: Status: Running, Startup type: Automatic
+    * Note:The pre-requisite for RabbitMQ is Erlang. (Install OTP_win64_19.3.exe from softwares folder
    
       Run rabbitmq plugin to view concole
       --------------------------------
-      1) D:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.9\sbin>rabbitmq-plugins enable rabbitmq_management
-      2) login local rabbitmq admin console @ http://localhost:15672
+       *  D:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.9\sbin>rabbitmq-plugins enable rabbitmq_management
+       *  login local rabbitmq admin console @ http://localhost:15672
       user:guest
       pass:guest
 
 3) Run spring boot application by maven run configuration
 =========================================================
 
-      clean install spring-boot:run
+       * clean install spring-boot:run
 
 
 4) verify the output via POSTMAN
