@@ -10,7 +10,7 @@ https://cloud.mongodb.com/user#/atlas/login
     * create document : course
     * document will be added automatically by spring bootstrap class   
 
-      sample:
+      Sample
       -------
       {"_id":{"$oid":"5ded9404529f3268634654c4"},"courseId":{"$numberInt":"1"},"title":"ML","description":"Machine   Learning","active":true,"fee":{"$numberDouble":"1500"},"_class":"com.example.demo.document.Course"}
 
@@ -20,9 +20,9 @@ https://cloud.mongodb.com/user#/atlas/login
    After installation check service status in start-> run -> services.msc
    Observation: Status: Running, Startup type: Automatic
    Note:The pre-requisite for RabbitMQ is Erlang. (Install OTP_win64_19.3.exe from softwares folder
-
-   run plugin to view console
-   -------------------------
+   
+      Run rabbitmq plugin to view concole
+      --------------------------------
       1) D:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.9\sbin>rabbitmq-plugins enable rabbitmq_management
       2) login local rabbitmq admin console @ http://localhost:15672
       user:guest
