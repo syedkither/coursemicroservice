@@ -1,7 +1,7 @@
 # coursemicroservice
 Course micro service
 
-Description : Design course and student microservices as per CodingTest-Microservice.pdf
+Description : Designed course and student microservices as per CodingTest-Microservice.pdf
 
 1) Cluster mongodb
    ======================
