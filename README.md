@@ -2,8 +2,8 @@
 course micro service
 
 
-1) cluster mongodb
-================
+1) Cluster mongodb
+======================
 https://cloud.mongodb.com/user#/atlas/login
     * create account 
     * create database : coursedb
@@ -35,6 +35,7 @@ clean install spring-boot:run
 
 
 4) verify the output via POSTMAN
+=================================
      GET METHOD    : http://localhost:8081/course/get
      DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
      POST METHOD   : http://localhost:8081/course/add/
