@@ -36,9 +36,9 @@ https://cloud.mongodb.com/user#/atlas/login
 
 4) verify the output via POSTMAN
 =================================
-        a) GET METHOD    : http://localhost:8081/course/get
-        b) DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
-        c) POST METHOD   : http://localhost:8081/course/add/
-                REQUEST PAYLOAD :  {  "courseId": 4,  "title": "AWS",  "description": "Amazon Web Service,  "active": true,  "fee": 900 }
-                Content-type : application/json
+         * GET METHOD    : http://localhost:8081/course/get
+         * DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
+         *  POST METHOD   : http://localhost:8081/course/add/
+                 * REQUEST PAYLOAD :  {  "courseId": 4,  "title": "AWS",  "description": "Amazon Web Service,  "active": true,  "fee": 900 }
+                 * Content-type : application/json
 
