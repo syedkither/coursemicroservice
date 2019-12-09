@@ -16,6 +16,7 @@ Course micro service
 
 2) RabbitMQ
    =============
+    * Course micro service will be sender/publisher to queue StudentAQ and StudentRQ
     * Install RabbitMQServer from official website. 
     * After installation check service status in start-> run -> services.msc
     * Observation: Status: Running, Startup type: Automatic
