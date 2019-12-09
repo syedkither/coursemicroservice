@@ -21,12 +21,12 @@ After installation check service status in start-> run -> services.msc
 Observation: Status: Running, Startup type: Automatic
 Note:The pre-requisite for RabbitMQ is Erlang. (Install OTP_win64_19.3.exe from softwares folder
 
-run plugin to view console
--------------------------
-1) D:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.9\sbin>rabbitmq-plugins enable rabbitmq_management
-2) login local rabbitmq admin console @ http://localhost:15672
-user:guest
-pass:guest
+   run plugin to view console
+   -------------------------
+      1) D:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.9\sbin>rabbitmq-plugins enable rabbitmq_management
+      2) login local rabbitmq admin console @ http://localhost:15672
+      user:guest
+      pass:guest
 
 3) Run spring boot application by maven run configuration
 =========================================================
@@ -36,9 +36,9 @@ clean install spring-boot:run
 
 4) verify the output via POSTMAN
 =================================
-     GET METHOD    : http://localhost:8081/course/get
-     DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
-     POST METHOD   : http://localhost:8081/course/add/
+     a) GET METHOD    : http://localhost:8081/course/get
+     b) DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
+     c) POST METHOD   : http://localhost:8081/course/add/
              REQUEST PAYLOAD :  {  "courseId": 4,  "title": "AWS",  "description": "Amazon Web Service,  "active": true,  "fee": 900 }
              Content-type : application/json
             
