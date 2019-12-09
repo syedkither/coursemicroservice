@@ -29,7 +29,7 @@ public class CourseServiceController {
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET, headers = "Accept=application/json")
 	List<Course> getCourses() {
-		return courseMongoRepository.findAll();
+		return courseMongoRepository.findAllByActiveTrue();
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
