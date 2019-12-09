@@ -4,7 +4,7 @@ Course micro service
 
 1) Cluster mongodb
    ======================
-https://cloud.mongodb.com/user#/atlas/login
+    * https://cloud.mongodb.com/user#/atlas/login
     * create account 
     * create database : coursedb
     * create document : course
