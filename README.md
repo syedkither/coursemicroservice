@@ -29,7 +29,7 @@ user:guest
 pass:guest
 
 3) Run spring boot application by maven run configuration
-===================================================
+=========================================================
 
 clean install spring-boot:run
 
