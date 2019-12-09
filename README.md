@@ -34,8 +34,9 @@ https://cloud.mongodb.com/user#/atlas/login
        * clean install spring-boot:run
 
 
-4) verify the output via POSTMAN
+4) Verify the output via POSTMAN
 =================================
+
          * GET METHOD    : http://localhost:8081/course/get
          * DELETE METHOD : http://localhost:8081/course/remove?courseID=4              
          *  POST METHOD   : http://localhost:8081/course/add/
