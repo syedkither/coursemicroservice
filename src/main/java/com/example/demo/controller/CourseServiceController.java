@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ import com.example.demo.repository.CourseMongoRepository;
 @RestController
 @CrossOrigin
 @RequestMapping("/course")
+@RefreshScope
 public class CourseServiceController {
 	@Autowired
 	CourseMongoRepository courseMongoRepository;
