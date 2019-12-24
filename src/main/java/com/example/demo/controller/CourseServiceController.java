@@ -28,8 +28,18 @@ public class CourseServiceController {
 	CourseMongoRepository courseMongoRepository;
 	@Autowired
 	Sender sender;
-
-	@RequestMapping(value = "/get", method = RequestMethod.GET, headers = "Accept=application/json")
+/*
+    A resource can have multiple representations
+	* XML
+	* HTML
+	* JSON
+	When a resource is requested, we provide the representation of the resource.
+	When a consumer sends a request, it can specify two HTTP Headers related to Content Negotiation
+	Accept and 	Content-Type
+	Content-Type indicates the content type of the body of the request.
+	Accept indicates the expected content type of the response.  , produces = { "application/json", "application/xml" }
+ */
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	List<Course> getCourses() {
 		return courseMongoRepository.findAllByActiveTrue();
 	}

@@ -12,6 +12,10 @@ public class Course {
 	private String description;
 	private Boolean active;
 	private Double fee;
+	
+	public Course(){
+		
+	}
 
 	public Course(String title, String description, Boolean active, Integer courseId, Double fee) {
 		this.title = title;
