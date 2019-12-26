@@ -45,7 +45,4 @@ Description : Designed course and student microservices as per CodingTest-Micros
                  * REQUEST PAYLOAD :  {  "courseId": 4,  "title": "AWS",  "description": "Amazon Web Service,  "active": true,  "fee": 900 }
                  * Content-type : application/json
 
-5) Refresh spring microservice properties by configserver
-   ======================================================
-curl localhost:8080/actuator/refresh -d {} -H "Content-Type: application/json"
-curl localhost:8080/actuator/bus-refresh -d {} -H "Content-Type: application/json"
+
