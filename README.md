@@ -46,3 +46,10 @@ Description : Designed course and student microservices as per CodingTest-Micros
                  * Content-type : application/json
 
 
+5) Content Negotiation end-points
+   ===============================
+   * Using URL suffixes (extensions) in the request (eg .xml/.json)
+   * Using URL parameter in the request (eg ?format=json)
+   * Using Accept header in the request
+   
+By default, this is the order in which the Spring content negotiation manager will try to use these three strategies. And if none of these are enabled, we can specify a fallback to a default content type of json.
