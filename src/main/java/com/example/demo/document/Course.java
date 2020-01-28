@@ -1,5 +1,9 @@
 package com.example.demo.document;
 
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,14 +11,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Course {
 	@Id
 	private String id;
+	@NotNull(message = "Course ID must not be empty")
 	private Integer courseId;
+	@NotEmpty(message = "Course Title must not be empty")
 	private String title;
+	@NotEmpty(message = "Course Description must not be empty")
 	private String description;
+	@AssertTrue
+	@NotNull(message = "Course Active flag must not be empty")
 	private Boolean active;
+	@NotNull(message = "Course Fee must not be empty")
 	private Double fee;
-	
-	public Course(){
-		
+
+	public Course() {
+
 	}
 
 	public Course(String title, String description, Boolean active, Integer courseId, Double fee) {
