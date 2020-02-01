@@ -26,12 +26,18 @@ import com.example.demo.document.Course;
 import com.example.demo.exception.RecordNotFoundException;
 import com.example.demo.repository.CourseMongoRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/course")
 @RefreshScope
 //Path Variables/ Request Param Validation
 @Validated
+@Api(tags = "Course")
 public class CourseServiceController {
 
 	protected static Logger logger = LoggerFactory.getLogger(CourseServiceController.class.getName());
@@ -50,12 +56,22 @@ public class CourseServiceController {
 	 * content type of the response. , produces = { "application/json",
 	 * "application/xml" }
 	 */
+	@ApiOperation(value = "This endpoint is used to get the all active course details")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = " Successfully retrieved list of courses"),
+            @ApiResponse(code = 201, message = " New course was successfully created"),
+            @ApiResponse(code = 401, message = " You are not authorized to view the resource"),
+            @ApiResponse(code = 403, message = " Accessing the resource you were trying to reach is forbidden"),
+            @ApiResponse(code = 404, message = " The resource you were trying to reach is not found"),
+		    @ApiResponse(code = 400, message = " Bad request is received", response = Error.class),
+		    @ApiResponse(code = 500, message = " Server error", response = Error.class)
+		})
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	List<Course> getCourses() {
 		logger.info("Fetching all courses by active");
 		return courseMongoRepository.findAllByActiveTrue();
 	}
-
+	@ApiOperation(value = "This endpoint is used to add course details")
 	@RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	void add(@Valid @RequestBody Course course) {
 
@@ -81,7 +97,7 @@ public class CourseServiceController {
 		}
 
 	}
-
+	@ApiOperation(value = "This endpoint is used to remove the course details")
 	@RequestMapping(value = "/remove", method = RequestMethod.DELETE)
 	void remove(@RequestParam(value = "courseID") @Min(1) String courseID) {
 		if (Objects.nonNull(courseID)) {

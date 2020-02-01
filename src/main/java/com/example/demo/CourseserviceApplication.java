@@ -15,7 +15,7 @@ import com.example.demo.repository.CourseMongoRepository;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableWebMvc
+//@EnableWebMvc
 public class CourseserviceApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
