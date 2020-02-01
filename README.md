@@ -53,3 +53,7 @@ Description : Designed course and student microservices as per CodingTest-Micros
    * Using Accept header in the request
    
 By default, this is the order in which the Spring content negotiation manager will try to use these three strategies. And if none of these are enabled, we can specify a fallback to a default content type of json.
+
+6) API Documentation
+   ====================
+   swagger core is implemented at available @ http://localhost:8081/v2/api-docs
