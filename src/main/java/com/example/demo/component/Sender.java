@@ -1,35 +1,26 @@
 package com.example.demo.component;
 
-import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Sender {
 	RabbitMessagingTemplate template;
-
+	public final static String EXCHANGE_NAME = "spring-boot-exchange";
+	public final static String QUEUE_ROUTINGKEY_ADD = "routingKeyadd-boot";
+	public final static String QUEUE_ROUTINGKEY_REMOVE = "routingKeyremove-boot";
+	
 	@Autowired
 	Sender(RabbitMessagingTemplate template) {
 		this.template = template;
 	}
 
-	@Bean
-	Queue queueaddcou() {
-		return new Queue("StudentAQ", false);
-	}
-
-	@Bean
-	Queue queueremovecou() {
-		return new Queue("StudentRQ", false);
-	}
-
 	public void sendAR(Object message) {
-		template.convertAndSend("StudentAQ", message);
+		template.convertAndSend(EXCHANGE_NAME, QUEUE_ROUTINGKEY_ADD, message);
 	}
 
 	public void sendRR(Object message) {
-		template.convertAndSend("StudentRQ", message);
+		template.convertAndSend(EXCHANGE_NAME, QUEUE_ROUTINGKEY_REMOVE, message);
 	}
 }

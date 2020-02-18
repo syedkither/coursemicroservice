@@ -30,6 +30,12 @@ Description : Designed course and student microservices as per CodingTest-Micros
       user:guest
       pass:guest
 
+	public final static String QUEUE_ROUTINGKEY_ADD = "routingKeyadd-boot";
+	public final static String QUEUE_ROUTINGKEY_REMOVE = "routingKeyremove-boot";
+	public final static String EXCHANGE_NAME = "spring-boot-exchange";
+	private final static String QUEUE_NAME_1 = "StudentAQ";
+	private final static String QUEUE_NAME_2 = "StudentRQ";
+	
 3) Run spring boot application by maven run configuration
    =========================================================
 
