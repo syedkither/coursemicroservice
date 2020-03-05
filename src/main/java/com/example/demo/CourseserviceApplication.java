@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.example.demo.document.Course;
@@ -17,7 +18,7 @@ import com.example.demo.repository.CourseMongoRepository;
 @SpringBootApplication
 //@EnableWebMvc
 public class CourseserviceApplication implements WebMvcConfigurer {
-
+	private static Logger logger = LoggerFactory.getLogger(CourseserviceApplication.class.getName());
 	public static void main(String[] args) {
 		SpringApplication.run(CourseserviceApplication.class, args);
 	}
@@ -46,20 +47,26 @@ public class CourseserviceApplication implements WebMvcConfigurer {
 	}
 
 	public void cleanData(CourseMongoRepository courseMongoRepository) {
-		System.out.println("Removing all data to Atlas Mongo DB");
 		courseMongoRepository.deleteAll();
+		if (logger.isInfoEnabled()){
+			logger.info("Removing all data to Atlas Mongo DB");
+		}
 	}
 
 	public void addSampleData(CourseMongoRepository courseMongoRepository) {
-		System.out.println("Adding sample data to Atlas Mongo DB");
 		courseMongoRepository.save(new Course("ML", "Machine Learning", true, 1, 1500.0));
 		courseMongoRepository.save(new Course("DS", "Database Systems", true, 2, 800.0));
 		courseMongoRepository.save(new Course("WB", "Web Basics", true, 3, 130.0));
+		if (logger.isInfoEnabled()){
+			logger.info("Adding sample data to Atlas Mongo DB");
+		}
 	}
 
 	public void listAll(CourseMongoRepository courseMongoRepository) {
-		System.out.println("Listing sample data from Atlas Mongo DB");
-		courseMongoRepository.findAll().forEach(c -> System.out.println(c));
+		courseMongoRepository.findAll().forEach(c -> logger.info("Listing sample data from Atlas Mongo DB"));
+		if (logger.isInfoEnabled()){
+			logger.info("Listing sample data from Atlas Mongo DB");
+		}
 	}
 
 }

@@ -32,13 +32,11 @@ public class CustomPathProvider extends AbstractPathProvider {
     }
 
     private String getOperationPathPrefix(String path) {
-        switch (path) {
-            case "/student/add":
-            case "/student/get":
-            case "/student/remove":
-                return "";   //spring boot doesn't have root context by default, if there is then add root context explicitly
-            default:
-                return "";
-        }
+    	
+    	if(path.equals("/student/add") || path.equals("/student/get") ||
+    			path.equals("/student/remove")){
+    		return "";  //spring boot doesn't have root context by default, if there is then add root context explicitly
+    	}
+    	return "";
     }
 }

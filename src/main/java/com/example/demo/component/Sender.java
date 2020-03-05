@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Sender {
 	RabbitMessagingTemplate template;
-	public final static String EXCHANGE_NAME = "spring-boot-exchange";
-	public final static String QUEUE_ROUTINGKEY_ADD = "routingKeyadd-boot";
-	public final static String QUEUE_ROUTINGKEY_REMOVE = "routingKeyremove-boot";
+	public static final String EXCHANGE_NAME = "spring-boot-exchange";
+	public static final String QUEUE_ROUTINGKEY_ADD = "routingKeyadd-boot";
+	public static final String QUEUE_ROUTINGKEY_REMOVE = "routingKeyremove-boot";
 	
 	@Autowired
 	Sender(RabbitMessagingTemplate template) {

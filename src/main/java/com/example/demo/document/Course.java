@@ -23,10 +23,6 @@ public class Course {
 	@NotNull(message = "Course Fee must not be empty")
 	private Double fee;
 
-	public Course() {
-
-	}
-
 	public Course(String title, String description, Boolean active, Integer courseId, Double fee) {
 		this.title = title;
 		this.description = description;
@@ -90,13 +86,3 @@ public class Course {
 	}
 
 }
-
-/*
- * sample format in mongo atlas
- * {"_id":{"$oid":"5de7f3081c9d4400001632d2"},"courseId":"4","title":"AWS",
- * "description":"Amazon Web Service","active":"true"}
- * 
- * 
- * 
- * 
- */

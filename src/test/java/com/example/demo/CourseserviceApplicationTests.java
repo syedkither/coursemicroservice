@@ -1,13 +1,10 @@
 package com.example.demo;
 
-import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class CourseserviceApplicationTests {
+import com.example.demo.controller.AbstractTest;
 
-	@Test
-	void contextLoads() {
-	}
+@SpringBootTest
+class CourseserviceApplicationTests extends AbstractTest {
 
 }

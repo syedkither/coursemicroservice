@@ -2,7 +2,6 @@ package com.example.demo;
 
 import javax.servlet.ServletContext;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,10 +23,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@Profile({ "dev", "qa" }) // move to api gateway // turn off swagger-ui in production
 // https://blog.madadipouya.com/2019/12/08/spring-boot-disable-swagger-ui-in-production/
 public class SwaggerConfig {
-	@Autowired
-	private ServletContext servletContext;
+	
 	@Bean
-	public Docket api() {
+	public Docket api(ServletContext servletContext) {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.pathProvider(new CustomPathProvider(servletContext))
